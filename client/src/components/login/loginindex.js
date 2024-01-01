@@ -1,11 +1,17 @@
 import React from 'react';
-import './style (1).css';
+import './YourCSSFile.css'; // css file path inga 
 
-function Home() {
+const LoginForm = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // Add your login logic here
+    window.location.href = 'mainindex.html'; //main page path 
+  };
+
   return (
     <div className="center">
       <h1>Login Form</h1>
-      <form method="post">
+      <form onSubmit={handleLogin}>
         <div className="txt_field">
           <input type="text" required />
           <span></span>
@@ -17,19 +23,13 @@ function Home() {
           <label>Password</label>
         </div>
         <div className="pass">Forgot Password?</div>
-        <input
-          type="submit"
-          value="Login"
-          onClick={() => {
-            window.location.href = 'mainindex.html';
-          }}
-        />
+        <input type="submit" value="Login" />
         <div className="signup_link">
           Not a member? <a href="Signup.html">Signup</a>
         </div>
       </form>
     </div>
   );
-}
+};
 
-export default Home;
+export default LoginForm;
